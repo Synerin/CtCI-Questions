@@ -40,8 +40,8 @@ public class ArraysAndStringsTest {
         test2 = test1;
         assertEquals(test.URLify(test1, 5), test2);
 
-        test1 = "a   b".toCharArray();
+        test1 = "a   b      ".toCharArray();
         test2 = "a%20%20%20b".toCharArray();
-        assertEquals(test.URLify(test1, 11), test2);
+        assertEquals(test.URLify(test1, 2), test2);
     }
 }

@@ -54,6 +54,17 @@ public class ArraysAndStrings {
                     can perform this operation in place.)
      */
     public char[] URLify(char[] str, int length) {
+        int displace = 0;
+
+        for(int i = 0; i < length; i++) {
+            if(str[i] == ' ') {
+                // Will need to displace the characters after i + 2
+                str[i] = '%';
+                str[i + 1] = '2';
+                str[i + 2] = '0';
+            }
+        }
+
         return str;
     }
 }
