@@ -5,7 +5,7 @@ public class ArraysAndStrings {
 
     }
 
-    // 1.1 Is Unique: Implement an algorithm to determine if a string has all unique characters.
+    // 1.1 Is Unique
     public boolean isUnique(String str) {
         boolean chars[] = new boolean[256]; // Assuming input will be derived from ASCII
 
@@ -20,7 +20,7 @@ public class ArraysAndStrings {
         return true;
     }
 
-    // 1.2 Check Permutation: Given two strings, write a method to decide of one is a permutation of the other.
+    // 1.2 Check Permutation
     public boolean checkPermutation(String str, String perm) {
         if(str.length() != perm.length()) return false; // Permutations would have equal length
 
@@ -48,11 +48,7 @@ public class ArraysAndStrings {
         return true;
     }
 
-    /* 1.3 URLify: Write a method to replace all spaces in a string with '%20'. You may assume that the string has
-                    sufficient space at the end to hold the additional characters, and that you are given the "true"
-                    length of the string. (Note: If implementing in Java, please use a character array so that you
-                    can perform this operation in place.)
-     */
+    // 1.3 URLify
     public char[] URLify(char[] str, int length) {
         int displace = 0;
 
