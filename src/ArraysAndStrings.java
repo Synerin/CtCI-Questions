@@ -67,7 +67,22 @@ public class ArraysAndStrings {
     // 1.4 Palindrome Permutation
     public boolean palindromePermutation(String str) {
         int[] chars = new int[26];
+        str = str.toLowerCase();
 
-        return true;
+        for(int i = 0; i < str.length(); i++) {
+            char current = str.charAt(i);
+
+            if(current > 96 && current < 123) {
+                chars[current - 97]++;
+            }
+        }
+
+        int odds = 0;
+
+        for(int c : chars) {
+            if(c % 2 != 0) odds++;
+        }
+
+        return odds < 2;
     }
 }
