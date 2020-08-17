@@ -7,7 +7,7 @@ public class ArraysAndStrings {
 
     // 1.1 Is Unique
     public boolean isUnique(String str) {
-        boolean chars[] = new boolean[256]; // Assuming input will be derived from ASCII
+        boolean[] chars = new boolean[256]; // Assuming input will be derived from ASCII
 
         for(int i = 0; i < str.length(); i++) {
             char val = str.charAt(i);
@@ -24,7 +24,7 @@ public class ArraysAndStrings {
     public boolean checkPermutation(String str, String perm) {
         if(str.length() != perm.length()) return false; // Permutations would have equal length
 
-        int chars[] = new int[256]; // Assuming input will be derived from ASCII
+        int[] chars = new int[256]; // Assuming input will be derived from ASCII
         int i;
 
         for(i = 0; i < str.length(); i++) {
@@ -66,6 +66,8 @@ public class ArraysAndStrings {
 
     // 1.4 Palindrome Permutation
     public boolean palindromePermutation(String str) {
+        int[] chars = new int[26];
+
         return true;
     }
 }
