@@ -26,22 +26,34 @@ public class ArraysAndStringsTest {
 
     @Test
     public void URLifyTest() {
-        char[] test1, test2;
+        char[] actual, expected;
 
-        test1 = "Mr John Smith   ".toCharArray();
-        test2 = "Mr%20John%20Smith".toCharArray();
-        assertEquals(test.URLify(test1, 13), test2);
+        actual = "Mr John Smith    ".toCharArray();
+        expected = "Mr%20John%20Smith".toCharArray();
+        assertArrayEquals(test.URLify(actual, 13), expected);
 
-        test1 = " ".toCharArray();
-        test2 = new char[] {'\0'};
-        assertEquals(test.URLify(test1, 0), test2);
+        actual = " ".toCharArray();
+        expected = new char[] {'\0'};
+        assertArrayEquals(test.URLify(actual, 0), expected);
 
-        test1 = "Hello".toCharArray();
-        test2 = test1;
-        assertEquals(test.URLify(test1, 5), test2);
+        actual = "Hello".toCharArray();
+        expected = actual;
+        assertArrayEquals(test.URLify(actual, 5), expected);
 
-        test1 = "a   b      ".toCharArray();
-        test2 = "a%20%20%20b".toCharArray();
-        assertEquals(test.URLify(test1, 2), test2);
+        actual = "a   b      ".toCharArray();
+        expected = "a%20%20%20b".toCharArray();
+        assertArrayEquals(test.URLify(actual, 2), expected);
+    }
+
+    @Test
+    public void palindromePermutationTest() {
+        assertTrue(test.palindromePermutation("Tact Coa"));
+        assertTrue(test.palindromePermutation("racecar"));
+        assertTrue(test.palindromePermutation("r4Ac E&^$#R       a.C"));
+        assertFalse(test.palindromePermutation("abcdefgh"));
+        assertTrue(test.palindromePermutation("aaaaaaaaaaaaaaaaaaaaaaaaaaaa"));
+        assertTrue(test.palindromePermutation("abbcccc"));
+        assertTrue(test.palindromePermutation("aabbcccc"));
+        assertFalse(test.palindromePermutation("abbccc"));
     }
 }
