@@ -66,21 +66,22 @@ public class ArraysAndStrings {
 
     // 1.4 Palindrome Permutation
     public boolean palindromePermutation(String str) {
-        int[] chars = new int[26];
+        int[] chars = new int[26]; // Hash of lowercase alphabet
+        int odds = 0; // Keeps track of how many characters have an odd number of occurrences
         str = str.toLowerCase();
 
         for(int i = 0; i < str.length(); i++) {
             char current = str.charAt(i);
 
-            if(current > 96 && current < 123) {
+            if(current > 96 && current < 123) { // Consider only lowercase ASCII characters
                 chars[current - 97]++;
+
+                if(chars[current - 97] % 2 == 1) {
+                    odds++;
+                } else {
+                    odds--;
+                }
             }
-        }
-
-        int odds = 0;
-
-        for(int c : chars) {
-            if(c % 2 != 0) odds++;
         }
 
         return odds < 2;
