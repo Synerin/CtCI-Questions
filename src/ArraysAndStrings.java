@@ -63,4 +63,9 @@ public class ArraysAndStrings {
 
         return str;
     }
+
+    // 1.4 Palindrome Permutation
+    public boolean palindromePermutation(String str) {
+        return true;
+    }
 }
