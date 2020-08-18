@@ -56,4 +56,14 @@ public class ArraysAndStringsTest {
         assertTrue(test.palindromePermutation("aabbcccc"));
         assertFalse(test.palindromePermutation("abbccc"));
     }
+
+    @Test
+    public void oneAwayTest() {
+        assertTrue(test.oneAway("pale", "ple"));
+        assertTrue(test.oneAway("pales", "pale"));
+        assertTrue(test.oneAway("pale", "bale"));
+        assertFalse(test.oneAway("pale", "bake"));
+        assertFalse(test.oneAway("abc", "cba"));
+        assertFalse(test.oneAway("a b c", "abc"));
+    }
 }
