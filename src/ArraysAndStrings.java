@@ -86,4 +86,9 @@ public class ArraysAndStrings {
 
         return odds < 2;
     }
+
+    // 1.5 One Away
+    public boolean oneAway(String str, String edit) {
+        return false;
+    }
 }
