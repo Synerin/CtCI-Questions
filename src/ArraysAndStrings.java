@@ -5,6 +5,8 @@ public class ArraysAndStrings {
 
     }
 
+
+
     // 1.1 Is Unique
     public boolean isUnique(String str) {
         boolean[] chars = new boolean[256]; // Assuming input will be derived from ASCII
@@ -19,6 +21,8 @@ public class ArraysAndStrings {
 
         return true;
     }
+
+
 
     // 1.2 Check Permutation
     public boolean checkPermutation(String str, String perm) {
@@ -48,6 +52,8 @@ public class ArraysAndStrings {
         return true;
     }
 
+
+
     // 1.3 URLify
     public char[] URLify(char[] str, int length) {
         int displace = 0;
@@ -63,6 +69,8 @@ public class ArraysAndStrings {
 
         return str;
     }
+
+
 
     // 1.4 Palindrome Permutation
     public boolean palindromePermutation(String str) {
@@ -86,6 +94,8 @@ public class ArraysAndStrings {
 
         return odds < 2;
     }
+
+
 
     // 1.5 One Away
     public boolean oneAway(String str, String edit) {
