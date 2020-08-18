@@ -105,7 +105,29 @@ public class ArraysAndStrings {
         if(lengthDiff > 1) {
             return false; // Indicates more than one deletion/insertion
         } else if(lengthDiff == 1) {
-            // TODO: Implement lengthDiff == 1 check
+            int shorterLength = Math.min(str.length(), edit.length());
+
+            int i = 0;
+
+            while(i < shorterLength && str.charAt(i) == edit.charAt(i)) {
+                i++;
+            }
+
+            if(i == shorterLength) {
+                return true;
+            } else {
+                if(str.charAt(i) == edit.charAt(i + 1)) {
+                    for(; i < shorterLength; i++) {
+                        if(str.charAt(i) != edit.charAt(i + 1)) return false;
+                    }
+                } else if(str.charAt(i + 1) == edit.charAt(i)) {
+                    for(; i < shorterLength; i++) {
+                        if(str.charAt(i + 1) != edit.charAt(i)) return false;
+                    }
+                } else {
+                    return false;
+                }
+            }
         } else {
             for(int i = 0; i < str.length(); i++) {
                 if(str.charAt(i) != edit.charAt(i)) diffs++;
