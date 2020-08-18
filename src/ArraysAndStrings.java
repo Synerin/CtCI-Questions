@@ -99,6 +99,19 @@ public class ArraysAndStrings {
 
     // 1.5 One Away
     public boolean oneAway(String str, String edit) {
-        return false;
+        int lengthDiff = Math.abs(str.length() - edit.length());
+        int diffs = 0;
+
+        if(lengthDiff > 1) {
+            return false; // Indicates more than one deletion/insertion
+        } else if(lengthDiff == 1) {
+            // TODO: Implement lengthDiff == 1 check
+        } else {
+            for(int i = 0; i < str.length(); i++) {
+                if(str.charAt(i) != edit.charAt(i)) diffs++;
+            }
+        }
+
+        return diffs < 2;
     }
 }
