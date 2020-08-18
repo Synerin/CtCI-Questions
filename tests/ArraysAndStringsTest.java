@@ -65,5 +65,7 @@ public class ArraysAndStringsTest {
         assertFalse(test.oneAway("pale", "bake"));
         assertFalse(test.oneAway("abc", "cba"));
         assertFalse(test.oneAway("a b c", "abc"));
+        assertTrue(test.oneAway("abcdefghijkl", "abcefghijkl"));
+        assertFalse(test.oneAway("abcdefghijkl", "abcefghiikl"));
     }
 }
