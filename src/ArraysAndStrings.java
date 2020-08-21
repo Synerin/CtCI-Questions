@@ -136,4 +136,11 @@ public class ArraysAndStrings {
 
         return diffs < 2;
     }
+
+
+
+    // 1.6 String Compression
+    public String stringCompression(String str) {
+        return str;
+    }
 }

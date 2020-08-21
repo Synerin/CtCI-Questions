@@ -68,4 +68,14 @@ public class ArraysAndStringsTest {
         assertTrue(test.oneAway("abcdefghijkl", "abcefghijkl"));
         assertFalse(test.oneAway("abcdefghijkl", "abcefghiikl"));
     }
+
+    @Test
+    public void stringCompressionTest() {
+        assertEquals(test.stringCompression("aabcccccaaa"), "a2b1c5a3");
+        assertEquals(test.stringCompression("abcba"), "abcba");
+        assertEquals(test.stringCompression("abccba"), "a1b1c2b1a1");
+        assertEquals(test.stringCompression("aabaa"), "a2b1a2");
+        assertEquals(test.stringCompression("abcbabcbabb"), "a1b1c1b1a1b1c1b1a1b2");
+        assertEquals(test.stringCompression(""), "");
+    }
 }
