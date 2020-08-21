@@ -73,9 +73,9 @@ public class ArraysAndStringsTest {
     public void stringCompressionTest() {
         assertEquals(test.stringCompression("aabcccccaaa"), "a2b1c5a3");
         assertEquals(test.stringCompression("abcba"), "abcba");
-        assertEquals(test.stringCompression("abccba"), "a1b1c2b1a1");
-        assertEquals(test.stringCompression("aabaa"), "a2b1a2");
-        assertEquals(test.stringCompression("abcbabcbabb"), "a1b1c1b1a1b1c1b1a1b2");
+        assertEquals(test.stringCompression("abccba"), "abccba");
+        assertEquals(test.stringCompression("aabaa"), "aabaa");
+        assertEquals(test.stringCompression("abcbabcbabb"), "abcbabcbabb");
         assertEquals(test.stringCompression(""), "");
     }
 }
