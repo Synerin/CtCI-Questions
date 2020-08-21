@@ -141,6 +141,20 @@ public class ArraysAndStrings {
 
     // 1.6 String Compression
     public String stringCompression(String str) {
-        return str;
+        String result = "";
+
+        for(int i = 0; i < str.length(); i++) {
+            char current = str.charAt(i);
+            int val = 1;
+
+            while(i < str.length() - 1 && str.charAt(i + 1) == current) {
+                i++;
+                val++;
+            }
+
+            result += "" + current + val;
+        }
+
+        return result.length() < str.length() ? result : str;
     }
 }
