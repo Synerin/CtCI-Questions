@@ -157,4 +157,9 @@ public class ArraysAndStrings {
 
         return result.length() < str.length() ? result : str;
     }
+
+    // 1.7 Rotate Matrix
+    public int[][] rotateMatrix(int[][] matrix) {
+        return matrix;
+    }
 }
