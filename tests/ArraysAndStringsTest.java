@@ -95,4 +95,25 @@ public class ArraysAndStringsTest {
         expected = new int[][] {{13,9,5,1}, {14,10,6,2}, {15,11,7,3}, {16,12,8,4}};
         assertArrayEquals(expected, test.rotateMatrix(actual));
     }
+
+    @Test
+    public void zeroMatrixTest() {
+        int[][] actual, expected;
+
+        actual = new int[][] {{0, 1, 2, 3}, {4, 5, 6, 7}, {8, 9, 10, 11}};
+        expected = new int[][] {{0, 0, 0, 0}, {0, 5, 6, 7}, {0, 9, 10, 11}};
+        assertArrayEquals(expected, test.zeroMatrix(actual));
+
+        actual = new int[][] {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+        expected = new int[][] {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+        assertArrayEquals(expected, test.zeroMatrix(actual));
+
+        actual = new int[][] {{1, 2, 3}, {4, 0, 6}, {7, 8, 9}};
+        expected = new int[][] {{1, 0, 3}, {0, 0, 0}, {7, 0, 9}};
+        assertArrayEquals(expected, test.zeroMatrix(actual));
+
+        actual = new int[][] {{0, 2, 0}, {4, 5, 6}, {0, 8, 0}};
+        expected = new int[][] {{0, 0, 0}, {0, 5, 0}, {0, 0, 0}};
+        assertArrayEquals(expected, test.zeroMatrix(actual));
+    }
 }
