@@ -165,7 +165,25 @@ public class ArraysAndStrings {
 
     // 1.8 Zero Matrix
     public int[][] zeroMatrix(int[][] matrix) {
-        return matrix;
+        int[][] zeroed = matrix;
+
+        for(int i = 0; i < matrix.length; i++) {
+            for(int j = 0; j < matrix[i].length; j++) {
+                if(matrix[i][j] == 0) {
+                    int k;
+
+                    for(k = 0; k < matrix.length; k++) {
+                        zeroed[k][j] = 0;
+                    }
+
+                    for(k = 0; k < matrix[i].length; k++) {
+                        zeroed[i][k] = 0;
+                    }
+                }
+            }
+        }
+
+        return zeroed;
     }
 
     // 1.9 String Rotation
