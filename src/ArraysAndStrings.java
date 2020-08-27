@@ -162,4 +162,14 @@ public class ArraysAndStrings {
     public int[][] rotateMatrix(int[][] matrix) {
         return matrix;
     }
+
+    // 1.8 Zero Matrix
+    public int[][] zeroMatrix(int[][] matrix) {
+        return matrix;
+    }
+
+    // 1.9 String Rotation
+    public String stringRotation(String str) {
+        return str;
+    }
 }
