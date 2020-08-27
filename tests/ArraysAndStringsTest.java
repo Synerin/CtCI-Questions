@@ -30,19 +30,19 @@ public class ArraysAndStringsTest {
 
         actual = "Mr John Smith    ".toCharArray();
         expected = "Mr%20John%20Smith".toCharArray();
-        assertArrayEquals(test.URLify(actual, 13), expected);
+        assertArrayEquals(expected, test.URLify(actual, 13));
 
         actual = " ".toCharArray();
         expected = new char[] {'\0'};
-        assertArrayEquals(test.URLify(actual, 0), expected);
+        assertArrayEquals(expected, test.URLify(actual, 0));
 
         actual = "Hello".toCharArray();
         expected = actual;
-        assertArrayEquals(test.URLify(actual, 5), expected);
+        assertArrayEquals(expected, test.URLify(actual, 5));
 
         actual = "a   b      ".toCharArray();
         expected = "a%20%20%20b".toCharArray();
-        assertArrayEquals(test.URLify(actual, 2), expected);
+        assertArrayEquals(expected, test.URLify(actual, 2));
     }
 
     @Test
@@ -71,27 +71,28 @@ public class ArraysAndStringsTest {
 
     @Test
     public void stringCompressionTest() {
-        assertEquals(test.stringCompression("aabcccccaaa"), "a2b1c5a3");
-        assertEquals(test.stringCompression("abcba"), "abcba");
-        assertEquals(test.stringCompression("abccba"), "abccba");
-        assertEquals(test.stringCompression("aabaa"), "aabaa");
-        assertEquals(test.stringCompression("abcbabcbabb"), "abcbabcbabb");
-        assertEquals(test.stringCompression(""), "");
+        assertEquals("a2b1c5a3",test.stringCompression("aabcccccaaa"));
+        assertEquals("abcba", test.stringCompression("abcba"));
+        assertEquals("abccba", test.stringCompression("abccba"));
+        assertEquals("aabaa", test.stringCompression("aabaa"));
+        assertEquals("abcbabcbabb", test.stringCompression("abcbabcbabb"));
+        assertEquals("", test.stringCompression(""));
     }
 
     @Test
     public void rotateMatrixTest() {
         int[][] actual, expected;
 
-        actual = new int[][] {{1,2,3,4}, {5,6,7,8}, {9,10,11,12}, {13,14,15,16}};
-        expected = new int[][] {{13,9,5,1}, {14,10,6,2}, {15,11,7,3}, {16,12,8,4}};
-        assertArrayEquals(test.rotateMatrix(actual), expected);
-
         actual = new int[][] {{1}};
         expected = new int[][] {{1}};
-        assertArrayEquals(test.rotateMatrix(actual), expected);
+        assertArrayEquals(expected, test.rotateMatrix(actual));
 
         actual = new int[][] {{1,0}, {1,0}};
         expected = new int[][] {{1, 1}, {0, 0}};
+        assertArrayEquals(expected, test.rotateMatrix(actual));
+
+        actual = new int[][] {{1,2,3,4}, {5,6,7,8}, {9,10,11,12}, {13,14,15,16}};
+        expected = new int[][] {{13,9,5,1}, {14,10,6,2}, {15,11,7,3}, {16,12,8,4}};
+        assertArrayEquals(expected, test.rotateMatrix(actual));
     }
 }
